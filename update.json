@@ -1,0 +1,107 @@
+{
+  "schema": 1,
+  "version": "1.4.1",
+  "revision": "c4978051592507d40fa367a2c9098a407c2f4dbc",
+  "files": [
+    {
+      "name": "battery.lua",
+      "size": 2090,
+      "sha256": "b2386cb222cb1686701ee463dedac775bd784d5f7a6b9544619cc2f884d163ab"
+    },
+    {
+      "name": "batterylog.lua",
+      "size": 2673,
+      "sha256": "fbd5d9a20407a46636cdeb81eae047c019bd304e94194ae6fc38b7cc1d098acc"
+    },
+    {
+      "name": "CHARGE-LICENSE.txt",
+      "size": 1069,
+      "sha256": "aa89a965d98ddcd09b99c1427d919d64e33dfd0f28976dc755e98deb153fe6df"
+    },
+    {
+      "name": "charge-watchdog.txt",
+      "size": 1949,
+      "sha256": "09004eaafea6fefd12a46547d520ead8e8ce7b2c820b059ef510dbf81e69f055"
+    },
+    {
+      "name": "charge.lua",
+      "size": 7526,
+      "sha256": "d635ecdc87772a42c7dca4494eb73681f0b045ccf73e57b88c004628c1266eb0"
+    },
+    {
+      "name": "clocktext.lua",
+      "size": 2019,
+      "sha256": "ade316bed4c13d8d7c917a823ea022363ac3bb0cb7b8c58f025a99338187dba6"
+    },
+    {
+      "name": "layout.lua",
+      "size": 7786,
+      "sha256": "11ea05a168eb25014c0e65ca69f9829b737e8eb2f3e2df02c42f4aadd4174ddd"
+    },
+    {
+      "name": "light.lua",
+      "size": 2779,
+      "sha256": "39e2a467814064d87d82ff4f86c2d8d82be6ac4c683f7de31bcc6df06308c765"
+    },
+    {
+      "name": "lunar.lua",
+      "size": 4261,
+      "sha256": "017bd1e552f97b03c6a58297d599f196bd03f01bb8a97a196afba35d4bfec83d"
+    },
+    {
+      "name": "main.lua",
+      "size": 22295,
+      "sha256": "cbc5bdd3c5af7dfb7862d653907c38b166cf14313404fe191e16e7917c102f84"
+    },
+    {
+      "name": "model.lua",
+      "size": 3228,
+      "sha256": "b53a954a0510885dabaa1114ca576a8477f37960c4fba4b64c4c19ded5d4203a"
+    },
+    {
+      "name": "NOTICE.txt",
+      "size": 1016,
+      "sha256": "5daf6dbb57cb21725ecf34ec0cecabac443ba1ed5bebdc3695569c79460db204"
+    },
+    {
+      "name": "quotes.lua",
+      "size": 1543,
+      "sha256": "fcccde1bd3bf97063ed2043393f080f346eb6d29824f4d91db0c4a70964c1301"
+    },
+    {
+      "name": "README.md",
+      "size": 8704,
+      "sha256": "21b4e039b949bbd891af9aeca624d2396dcbcfee3e94dbf37ffd8b66fc340ae8"
+    },
+    {
+      "name": "schedule.lua",
+      "size": 1622,
+      "sha256": "d801fcffe89110868820ed992529ed9a2032f09341e798f056608af264b56bf3"
+    },
+    {
+      "name": "sleep.lua",
+      "size": 5652,
+      "sha256": "dd8328c12b812ce98191f4f45e6c152f49ea873af9b96146b03b578300d54da0"
+    },
+    {
+      "name": "updater.lua",
+      "size": 7614,
+      "sha256": "e019dea55efe8ee6a4fc561cd4df7dc45e5898d4f01563fa920e7bb198b595b6"
+    },
+    {
+      "name": "updateui.lua",
+      "size": 2489,
+      "sha256": "6759a1b13abd77bb422ca12a0053231a914294474463e0ad040f35757d5a12d0"
+    },
+    {
+      "name": "version.lua",
+      "size": 16,
+      "sha256": "667751e4abf51472039089bc41b01f2a8b5967d7abddf9de6a45182c8bffcfc7"
+    },
+    {
+      "name": "words.lua",
+      "size": 6017,
+      "sha256": "c4505f7f5702c63ceb232c62e1bd6fc450da615e867b9cc3ce7acf883578cd24"
+    }
+  ]
+}
