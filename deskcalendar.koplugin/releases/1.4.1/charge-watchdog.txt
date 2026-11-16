@@ -1,0 +1,55 @@
+#!/bin/sh
+# Recovery supervisor for the calendar's MAX77696 charge-control session.
+# No boot files or firmware settings are installed by this script.
+marker=$1
+token=$2
+owner=$3
+started=$4
+ready=$5
+report=$6
+version=$7
+base=/sys/devices/system/wario_charger/wario_charger0
+case "$owner:$started" in *[!0-9:]*|:|*:) exit 2;; esac
+[ -n "$marker" ] && [ -n "$token" ] && [ -n "$ready" ] || exit 2
+
+owner_start() {
+    target=${1:-$owner}
+    [ -r "/proc/$target/stat" ] || return 1
+    # Strip pid and parenthesized command (which may contain spaces).
+    rest=$(sed 's/^.*) //' "/proc/$target/stat") || return 1
+    set -- $rest
+    [ "$#" -ge 20 ] || return 1
+    shift 19
+    printf '%s' "$1"
+}
+restore() {
+    # The calendar only writes MODE 4. Do not change unrelated modes.
+    mode=$(cat "$base/mode" 2>/dev/null)
+    [ "$mode" = 5 ] && return 0
+    [ "$mode" = 4 ] || return 1
+    printf '1' > "$base/allow_charging" 2>/dev/null || return 1
+    [ "$(cat "$base/mode" 2>/dev/null)" = 5 ]
+}
+
+[ "$(cat "$marker" 2>/dev/null)" = "$token" ] || exit 0
+[ "$(owner_start)" = "$started" ] || exit 0
+guard_start=$(owner_start "$$") || exit 1
+printf '%s\n%s\n%s' "$token" "$$" "$guard_start" > "$ready" || exit 1
+trap 'stopping=1' TERM INT HUP
+while :; do
+    current=$(cat "$marker" 2>/dev/null)
+    if [ -n "$current" ] && [ "$current" != "$token" ]; then
+        # A newer controller owns the charger; do not undo its setting.
+        exit 0
+    fi
+    if [ -n "$stopping" ] || [ "$current" != "$token" ] || [ "$(owner_start)" != "$started" ]; then
+        if restore; then
+            printf '%s version=%s restored_charging=1\n' "$(date -u '+%Y-%m-%dT%H:%M:%SZ')" "$version" >> "$report"
+            [ "$(sed -n '1p' "$ready" 2>/dev/null)" = "$token" ] && rm -f "$ready"
+            exit 0
+        fi
+        printf '%s version=%s restore_failed=1\n' "$(date -u '+%Y-%m-%dT%H:%M:%SZ')" "$version" >> "$report"
+    fi
+    sleep 20 &
+    wait $!
+done

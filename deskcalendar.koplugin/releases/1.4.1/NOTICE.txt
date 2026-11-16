@@ -1,0 +1,19 @@
+Desk Calendar for KOReader, custom build for personal use, 2026.
+
+The plugin UI, model integration and sample content were authored for this project.
+The lunar.lua component is a Lua adaptation of Ho Ngoc Duc's lunar calendar
+algorithm, based on astronomical formulae from Jean Meeus (1998).
+
+Ho Ngoc Duc's Lunar calendar program in Javascript
+Copyright (c) 2006 Ho Ngoc Duc. All Rights Reserved.
+Astronomical algorithms from the book "Astronomical Algorithms" by Jean Meeus, 1998.
+Permission to use, copy, modify, and redistribute this software and its
+documentation for personal, non-commercial use is hereby granted provided that
+this copyright notice and appropriate documentation appears in all copies.
+
+Algorithm documentation:
+https://www.informatik.uni-leipzig.de/~duc/amlich/calrules.html
+Mirror: https://www.xemamlich.uhm.vn/calrules.html
+
+KOReader supplies its own fonts and native widgets; no fonts are redistributed.
+Quotes in quotes.lua are original short reflections, without third-party attribution.
